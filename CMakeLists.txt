@@ -46,3 +46,22 @@ add_executable(minic
     src/parser/Parser.cpp
     src/parser/AST.cpp
 )
+
+enable_testing()
+
+add_executable(minic_tests
+    tests/parser_tests.cpp
+    src/lexer/Lexer.cpp
+    src/parser/AST.cpp
+    src/parser/Parser.cpp
+)
+
+target_include_directories(minic_tests
+    PRIVATE
+    ${PROJECT_SOURCE_DIR}/include
+)
+
+add_test(
+    NAME ParserTests
+    COMMAND minic_tests
+)
