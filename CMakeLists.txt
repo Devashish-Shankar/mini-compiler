@@ -43,4 +43,6 @@ add_definitions(${LLVM_DEFINITIONS})
 add_executable(minic
     src/main.cpp
     src/lexer/Lexer.cpp
+    src/parser/Parser.cpp
+    src/parser/AST.cpp
 )
